@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.10.6
+    hostname: rabbitmq
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+
