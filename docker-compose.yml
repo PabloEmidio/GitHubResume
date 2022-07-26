@@ -1,10 +1,12 @@
 version: "3.9"
 
 services:
-  rabbitmq:
-    image: rabbitmq:3.10.6
-    hostname: rabbitmq
-    container_name: rabbitmq
-    ports:
-      - 5672:5672
-
+  github_resume:
+    build:
+      context: .
+    container_name: github_resume
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_USER: guest
+      RABBITMQ_PASSWORD: guest
+      RABBITMQ_PORT: 5672
