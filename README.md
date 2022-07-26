@@ -15,7 +15,7 @@ config = {
 }
 
 with ClusterRpcProxy(config) as cluster_rpc:
-    cluster_rpc.GitHubResume.generate_pdf('MyUser')
+    cluster_rpc.GitHubResume.generate_pdf({'profile_name': 'MyUser'})
 ```
 
 or using your own service
@@ -30,5 +30,5 @@ class MyServiceName:
 
     @rpc
     def use_github_service(self, *args, **kwargs) -> dict:
-        return self.gb.generate_document(args.pop(0) or kwargs['name'])
+        return self.gb.generate_document(args.pop(0) or kwargs['data'])
 ```
