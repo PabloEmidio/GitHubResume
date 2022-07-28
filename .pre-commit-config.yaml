@@ -10,9 +10,9 @@ repos:
       -   id: double-quote-string-fixer
       -   id: no-commit-to-branch
           args: [--branch, main, --branch, development]
-- repo: https://github.com/pycqa/flake8
-  alias: flake8
-  verbose: true
-  rev: '4.0.1'
-  hooks:
-  -   id: flake8
+-   repo: https://github.com/pycqa/flake8
+    alias: flake8
+    verbose: true
+    rev: '4.0.1'
+    hooks:
+      -   id: flake8
