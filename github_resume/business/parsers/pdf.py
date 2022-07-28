@@ -25,4 +25,8 @@ class PDFParse:
         pdf_file: bytes = pdfkit.from_string(
             template, options=OPTIONS, css=CSS_FILE
         )
-        return {'pdf': base64.b64encode(pdf_file), 'encode_type': 'b64'}
+        return {
+            'file': base64.b64encode(pdf_file).decode(),
+            'encode_type': 'b64',
+            'filename': self.filename
+        }
