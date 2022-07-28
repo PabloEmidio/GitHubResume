@@ -10,3 +10,11 @@ services:
       RABBITMQ_USER: guest
       RABBITMQ_PASSWORD: guest
       RABBITMQ_PORT: 5672
+    networks:
+      - git_resume_network
+
+
+networks:
+  git_resume_network:
+    name: git_resume_network
+    external: true

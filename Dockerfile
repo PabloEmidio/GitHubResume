@@ -6,6 +6,7 @@ COPY . /opt/api
 WORKDIR /opt/api
 
 RUN apt-get update
+RUN apt-get install wkhtmltopdf -y
 RUN pip3 install -r requirements.txt
 
 ENTRYPOINT ["nameko", "run", "--config", "github_resume/config.yml"]
